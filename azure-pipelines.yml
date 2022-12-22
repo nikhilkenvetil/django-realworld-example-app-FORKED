@@ -46,13 +46,21 @@ steps:
     pip install unittest-xml-reporting
   displayName: 'Install prerequisites'
 
-- script: |
-    pushd '$(projectRoot)'
-    python manage.py test --testrunner xmlrunner.extra.djangotestrunner.XMLTestRunner --no-input
-  displayName: 'Run tests'
+# - script: |
+#     pushd '$(projectRoot)'
+#     python manage.py test --testrunner xmlrunner.extra.djangotestrunner.XMLTestRunner --no-input
+#   displayName: 'Run tests'
 
-- task: PublishTestResults@2
+# - task: PublishTestResults@2
+#   inputs:
+#     testResultsFiles: "**/TEST-*.xml"
+#     testRunTitle: 'Python $(PYTHON_VERSION)'
+#   condition: succeededOrFailed()
+
+- task: AzurePowerShell@5
   inputs:
-    testResultsFiles: "**/TEST-*.xml"
-    testRunTitle: 'Python $(PYTHON_VERSION)'
-  condition: succeededOrFailed()
+    azureSubscription: '[nkhl] Visual Studio Enterprise(e75318de-b2ff-4033-abdf-9d490641afaa)'
+    ScriptType: 'FilePath'
+    ScriptPath: '$(Build.SourcesDirectory)\templates_and_scripts\CreateSonarQubeVM.json'
+    ScriptArguments: '$RGName test123 $dnsLabelPrefix sonarQ $adminUsername nikhil adminPassword Nikhil1234567890!!!'
+    azurePowerShellVersion: 'LatestVersion'
