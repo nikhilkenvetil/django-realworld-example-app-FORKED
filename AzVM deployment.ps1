@@ -18,10 +18,10 @@ param (
     $adminPassword
 )
 
-$adminPassword = ConvertTo-SecureString "Qwertyuiop1234!" -AsPlainText -Force
-$adminUsername = "nikhil"
-$dnsLabelPrefix = "nkhl"
-$RGName = "Sonar_test"
+$pwd = ConvertTo-SecureString $adminUsername -AsPlainText -Force
+# $adminUsername = "nikhil"
+# $dnsLabelPrefix = "nkhl"
+# $RGName = "Sonar_test"
 $location = "South India"
 
 Connect-AzAccount
@@ -32,7 +32,7 @@ New-AzResourceGroupDeployment `
     -ResourceGroupName $RGName `
     -TemplateFile C:\nkhl\Projects\CreateSonarQubeVM.json `
     -adminUsername $adminUsername `
-    -adminPassword $adminPassword `
+    -adminPassword $pwd `
     -dnsLabelPrefix $dnsLabelPrefix `
     -OSVersion "2022-datacenter" `
     -vmName "SonarQubeServer"
