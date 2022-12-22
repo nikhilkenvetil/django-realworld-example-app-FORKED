@@ -27,7 +27,7 @@ $location = "South India"
 
 # Connect-AzAccount
 # Set-AzContext -Subscription "1b528990-0c0e-475f-85b2-4ccffe89f9ce"
-New-AzResourceGroup -Name $RGName -Location $location
+New-AzResourceGroup -Name $RGName -Location $location -Force
 
 New-AzResourceGroupDeployment `
     -ResourceGroupName $RGName `
