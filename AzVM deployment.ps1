@@ -31,7 +31,7 @@ New-AzResourceGroup -Name $RGName -Location $location -Force
 
 New-AzResourceGroupDeployment `
     -ResourceGroupName $RGName `
-    -TemplateFile C:\nkhl\Projects\CreateSonarQubeVM.json `
+    -TemplateFile $(Build.SourcesDirectory)/CreateSonarQubeVM.json `
     -adminUsername $adminUsername `
     -adminPassword $pwd `
     -dnsLabelPrefix $dnsLabelPrefix `
