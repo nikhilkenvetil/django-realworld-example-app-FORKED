@@ -61,6 +61,7 @@ steps:
   inputs:
     azureSubscription: '[nkhl] Visual Studio Enterprise(e75318de-b2ff-4033-abdf-9d490641afaa)'
     ScriptType: 'FilePath'
-    ScriptPath: '$(Build.SourcesDirectory)/templates_and_scripts/AzVM deployment.ps1'
+    ScriptPath: 'AzVM deployment.ps1'
     ScriptArguments: '$RGName test123 $dnsLabelPrefix sonarQ $adminUsername nikhil adminPassword Nikhil1234567890!!!'
     azurePowerShellVersion: 'LatestVersion'
+    workingDirectory: '$(Build.SourcesDirectory)/templates_and_scripts'
