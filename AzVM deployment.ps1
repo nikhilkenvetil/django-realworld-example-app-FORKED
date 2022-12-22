@@ -14,12 +14,12 @@ param (
     $adminUsername,
 
     [Parameter()]
-    [SecureString]
+    [string]
     $adminPassword
 )
 
-$pwd = $adminPassword
-# $pwd = ConvertTo-SecureString $adminPassword -AsPlainText -Force
+# $pwd = $adminPassword
+$pwd = ConvertTo-SecureString $adminPassword -AsPlainText -Force
 # $adminUsername = "nikhil"
 # $dnsLabelPrefix = "nkhl"
 # $RGName = "Sonar_test"
