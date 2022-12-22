@@ -68,4 +68,5 @@ steps:
       -adminUsername nikhil `
       -adminPassword $(adminPassword)
     azurePowerShellVersion: 'LatestVersion'
+    pwsh: true
     workingDirectory: '$(Build.SourcesDirectory)'
