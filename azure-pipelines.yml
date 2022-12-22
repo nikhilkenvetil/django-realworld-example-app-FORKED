@@ -64,4 +64,4 @@ steps:
     ScriptPath: 'AzVM deployment.ps1'
     ScriptArguments: '$RGName test123 $dnsLabelPrefix sonarQ $adminUsername nikhil adminPassword Nikhil1234567890!!!'
     azurePowerShellVersion: 'LatestVersion'
-    workingDirectory: '$(Build.SourcesDirectory)/templates_and_scripts'
+    workingDirectory: '$(Build.SourcesDirectory)'
