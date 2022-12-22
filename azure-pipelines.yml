@@ -63,9 +63,9 @@ steps:
     ScriptType: 'FilePath'
     ScriptPath: 'AzVM deployment.ps1'
     ScriptArguments: 
-      $RGName test123 `
-      $dnsLabelPrefix dnssonarQ `
-      $adminUsername nikhil `
-      $adminPassword $(adminPassword)
+      -RGName test123 `
+      -dnsLabelPrefix dnssonarQ `
+      -adminUsername nikhil `
+      -adminPassword $(adminPassword)
     azurePowerShellVersion: 'LatestVersion'
     workingDirectory: '$(Build.SourcesDirectory)'
