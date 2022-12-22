@@ -18,7 +18,7 @@ param (
     $adminPassword
 )
 
-$pwd = ConvertTo-SecureString $adminUsername -AsPlainText -Force
+$pwd = ConvertTo-SecureString $adminPassword -AsPlainText -Force
 # $adminUsername = "nikhil"
 # $dnsLabelPrefix = "nkhl"
 # $RGName = "Sonar_test"
